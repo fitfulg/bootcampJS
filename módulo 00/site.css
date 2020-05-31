@@ -1,0 +1,29 @@
+/*
+    Eric Ramos Cardona
+    Módulo 00
+    "Bootcamp de Javascript" 
+    https://campus-beta.lemoncode.net/
+*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    background-color: cadetblue;
+    color: white;
+}
+
+.container {
+    background-color: red;
+    color: white;
+}
+
+#simpletext {
+    font-size: 32px;
+    background-color: pink;
+}
+
+div {
+    width: 300px;
+}
