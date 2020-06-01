@@ -1,5 +1,6 @@
 /*
     Eric Ramos Cardona
+    00 Hoteles CSS laboratorio
     Módulo 00
     "Bootcamp de Javascript" 
     https://campus-beta.lemoncode.net/
@@ -9,21 +10,65 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h2 {
-    background-color: cadetblue;
-    color: white;
+.hotels-header h2 {
+    padding: 20px;
+    text-align: center;
 }
 
-.container {
-    background-color: red;
-    color: white;
+.hotels-body {
+    margin: auto;
+    max-width: 90%;
 }
 
-#simpletext {
-    font-size: 32px;
-    background-color: pink;
+.hotel-item {
+    padding: 16px;
+    border-radius:25px;
+    border:1px solid #9c9c9c;
+    display: flex;
+    justify-content: space-between;
 }
 
-div {
-    width: 300px;
+/* diff */
+.hotel-name-container {
+    max-width: 300px;
 }
+/* diff */
+
+.hotel-name {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* diff */
+.hotel-description-container {
+    font-style: italic;
+    padding-top: 10px;
+    max-width: 300px;
+}
+/* diff */
+
+.hotel-description {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/* diff */
+.hotel-telephone-container {
+    max-width: 250px;
+}
+/* diff */
+
+.hotel-telephone {
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* diff */
+.stars {
+    max-width: 100px;
+    font-weight: 700;
+}
+/* diff */
