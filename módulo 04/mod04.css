@@ -1,0 +1,9 @@
+body {
+    background-color: rgb(216, 214, 214);
+}
+
+.calc {
+    position: relative;
+    bottom: -95px;
+    left: 45%;
+}
