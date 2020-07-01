@@ -13,30 +13,19 @@ var division = (a, b) => a / b;
 var num1 = () => parseInt(document.getElementById("campo1").value);
 var num2 = () => parseInt(document.getElementById("campo2").value);
 
-var SumResult = document.getElementById("resultado").innerText = suma(num1(), num2());
+
+var setResult = document.getElementById("resultado").innerText;
+
+function SumResult(setResult) {
+    setResult = suma(num1(), num2());
+}
+// var SumResult = document.getElementById("resultado").innerText = suma(num1(), num2());
 var SubsResult = document.getElementById("resultado").innerText = resta(num1(), num2());
 var MultResult = document.getElementById("resultado").innerText = multiplicacion(num1(), num2());
 var DivResult = document.getElementById("resultado").innerText = division(num1(), num2());
 
+// Eventos
 document.getElementById("button-mas") - addEventListener("click", SumResult);
-document.getElementById("button-menos") - addEventListener("click", SumResult);
-document.getElementById("button-por") - addEventListener("click", SumResult);
-document.getElementById("button-dividido") - addEventListener("click", SumResult);
-
-
-
-
-// () => document.getElementById("campo3").value;
-
-// var sumar = () => {
-//     console.log("resultado: " + suma(num1(), num2()));
-// }
-
-
-//(suma(num1, num2)) => document.getElementById("button-mas").value;
-
-
-
-// var restar = (resta(num1, num2)) => document.getElementById("button-menos").value;
-// var multiplicar = (multiplicacion(num1, num2)) => document.getElementById("button-por").value;
-// var dividir = (division(num1, num2)) => document.getElementById("button-dividido").value;
+document.getElementById("button-menos") - addEventListener("click", SubsResult);
+document.getElementById("button-por") - addEventListener("click", MultResult);
+document.getElementById("button-dividido") - addEventListener("click", DivResult);
