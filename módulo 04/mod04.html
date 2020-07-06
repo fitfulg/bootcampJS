@@ -17,16 +17,18 @@ https://campus-beta.lemoncode.net/
 </head>
 
 <body>
-    <div class="calc">
-        <h2><b>Calculadora</b></h2><br> </label><br>
-        <input type="text" id="campo1" placeholder="Primera cifra"><br><br>
-        <input type="text" id="campo2" placeholder="Segunda cifra"><br><br>
-        <button id="mas"><b>+</b></button>
-        <button id="menos"><b>-</b></button>
-        <button id="por"><b>*</b></button>
-        <button id="dividido"><b>/</b></button><br><br>
-        <h3 id="resultado"></h3>
-    </div>
+    <h1>Calculadora</h1>
+    <input type="number" id="campo1" placeholder="Escribe el primer numero"><br /><br />
+    <input type="number" id="campo2" placeholder="Escribe el segundo numero"><br />
+
+    <br />
+    <input type="number" id="campo3" placeholder="Resultado...."><br /><br />
+    <input type="button" value="+" onclick="suma()" id="operador">
+    <input type="button" value="-" onclick="resta()" id="operador"><br />
+    <input type="button" value="*" onclick="multi()" id="operador">
+    <input type="button" value="÷" onclick="divi()" id="operador"><br />
+    <button type="button" id="button1" onClick="borrar()">Borrar</button>
+
 </body>
 
 </html>
