@@ -3,7 +3,7 @@
 // "Bootcamp de Javascript" 
 // https://campus-beta.lemoncode.net/
 
-
+// OBLIGATORIO
 // Mostrar una estructura de carrito de la compra.
 
 const carrito = [{
@@ -36,45 +36,65 @@ const carrito = [{
     }
 ];
 
-// Listar todos los productos. 
+//EJERCICIO:  Listar todos los productos. 
 
-// for (i = 0; i < carrito.length; i++) {
-//     printF(carrito[i]);
-// }
+document.write("<h2>Listado de compra</h2>")
 
-function printF(product) {
+function superPrint(product) {
+    document.write("<p>id: " + product.id + "</p>");
+    document.write("<p>name: " + product.name + "</p>");
+    document.write("<p>price: " + product.price + "</p>");
+    document.write("<p>count: " + product.count + "</p>");
+    document.write("<p>premium: " + product.premium + "</p>");
+    document.write("==========================");
     console.log("id: " + product.id);
     console.log("name: " + product.name);
     console.log("price: " + product.price);
     console.log("count: " + product.count);
     console.log("premium: " + product.premium);
-    console.log("==========================")
+    console.log("==========================");
 }
 
-// Eliminar un producto (id: 3143) del carrito de la compra. 
-
-var index = 0;
+function print(product) {
+    document.write("<p><b>" + product + "</b></p>");
+    console.log(product);
+}
 
 for (i = 0; i < carrito.length; i++) {
-    if (product.id == 3143) {
-        // MINUTO 37:19
-    }
+    superPrint(carrito[i]);
 }
 
-// var productos = [];
+//EJERCICIO: Eliminar un producto (id: 3143) del carrito de la compra. 
+
+// var index;
 // for (i = 0; i < carrito.length; i++) {
-//     productos += carrito[i];
-//     //console.log(productos);
-// }
-
-// while (productos) {
-//     if (carrito.id == 3143) {
-
+//     if (carrito.id == 3143) { //localizar posicion
+//         index = i; //almacenar posicion conocida
 //     }
 // }
 
-// Calcular el total del carrito de la compra (ojo aquí truco multiplicar cantidad por valor).
+// carrito.splice(index, 1); // aplica splice al array para quitar ese elemento de index
 
+// superPrint(carrito);
 
+//EJERCICIO:  Calcular el total del carrito de la compra (ojo aquí truco multiplicar cantidad por valor).
 
-// Filtrar por los productos que sean prime
+// var total = 0;;
+// for (i = 0; i < carrito.length; i++) {
+//     total += carrito[i].price * carrito[i].count;
+//     console.log(carrito[i].name);
+//     console.log("==========================")
+//     document.write("<p>name: " + carrito[i].name + "</p>");
+//     document.write("==========================");
+// }
+// print(total);
+
+//EJERCICIO:  Filtrar por los productos que sean prime
+
+// var primeArr = [];
+// for (i = 0; i < carrito.length; i++) {
+//     if (carrito[i].premium == true) {
+//         primeArr.push(carrito[i]);
+//     }
+// }
+// console.log(primeArr);
