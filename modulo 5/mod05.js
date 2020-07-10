@@ -56,13 +56,13 @@ function superPrint(product) {
 }
 
 function print(product) {
-    document.write("<p><b>" + product + "</b></p>");
+    document.write(product);
     console.log(product);
 }
 
-for (i = 0; i < carrito.length; i++) {
-    superPrint(carrito[i]);
-}
+// for (i = 0; i < carrito.length; i++) {
+//     superPrint(carrito[i]);
+// }
 
 //EJERCICIO: Eliminar un producto (id: 3143) del carrito de la compra. 
 
@@ -79,15 +79,13 @@ for (i = 0; i < carrito.length; i++) {
 
 //EJERCICIO:  Calcular el total del carrito de la compra (ojo aquí truco multiplicar cantidad por valor).
 
-// var total = 0;;
-// for (i = 0; i < carrito.length; i++) {
-//     total += carrito[i].price * carrito[i].count;
-//     console.log(carrito[i].name);
-//     console.log("==========================")
-//     document.write("<p>name: " + carrito[i].name + "</p>");
-//     document.write("==========================");
-// }
-// print(total);
+var total = 0;;
+for (i = 0; i < carrito.length; i++) {
+    total += carrito[i].price * carrito[i].count;
+    document.write("Name: " + carrito[i].name + "<br><br>");
+    console.log(carrito[i].name);
+}
+print("Total: " + total + "€");
 
 //EJERCICIO:  Filtrar por los productos que sean prime
 
