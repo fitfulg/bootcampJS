@@ -79,13 +79,13 @@ function print(product) {
 
 //EJERCICIO:  Calcular el total del carrito de la compra (ojo aquí truco multiplicar cantidad por valor).
 
-var total = 0;;
-for (i = 0; i < carrito.length; i++) {
-    total += carrito[i].price * carrito[i].count;
-    document.write("Name: " + carrito[i].name + "<br><br>");
-    console.log(carrito[i].name);
-}
-print("Total: " + total + "€");
+// var total = 0;;
+// for (i = 0; i < carrito.length; i++) {
+//     total += carrito[i].price * carrito[i].count;
+//     document.write("Name: " + carrito[i].name + "<br><br>");
+//     console.log(carrito[i].name);
+// }
+// print("Total: " + total + "€");
 
 //EJERCICIO:  Filtrar por los productos que sean prime
 
