@@ -3,7 +3,6 @@
 // "Bootcamp de Javascript" 
 // https://campus-beta.lemoncode.net/
 
-// OBLIGATORIO
 // Mostrar una estructura de carrito de la compra.
 
 const carrito = [{
