@@ -1,5 +1,5 @@
 // Eric Ramos Cardona
-// Módulo 6 - Algoritmos I - Laboratorio
+// Módulo 6 - Algoritmos I - Laboratorio "CARRITO DE LA COMPRA"
 // "Bootcamp de Javascript" 
 // https://campus-beta.lemoncode.net/
 
@@ -66,44 +66,77 @@ const products = [{
     },
 ];
 
-//1. HTML Dinámico
+// HTML Dinámico
 
-var setQuantity = (product) => {
-    var quantity = document.createElement("input");
-    quantity.setAttribute("type", "number");
-    quantity.setAttribute("name", "quantity" + product.description);
-    quantity.setAttribute("id", "item" + product.description);
-    quantity.setAttribute("min", "0");
-    quantity.setAttribute("max", product.stock);
-    quantity.addEventListener("change", event => product.units = event.target.value);
-    return quantity;
+var getLista = (product) => {
+    var div = document.createElement("div");
+    div.setAttribute("class", "c-item");
+
+    var span = document.createElement("span");
+    span.innerText = product.description;
+
+    var input = document.createElement("input");
+    input.setAttribute("class", "product-unit");
+    input.setAttribute("type", "number");
+    input.setAttribute("value", product.units);
+    input.setAttribute("min", 0);
+    input.setAttribute("max", product.stock);
+    input.addEventListener("change", event => product.units = event.target.value);
+
+    var cart = document.getElementById("carrito");
+    cart.appendChild(div).appendChild(span).appendChild(input);
+    cart.appendChild(div).appendChild(input);
 }
 
+// Cálculo de factura
+
+var totalIva = (product) => {
+    let iva = 0;
+    for (var item of products) {
+        if (item.tax === REGULAR_TYPE) {
+            iva += item.price * item.units * 21 / 100;
+        } else if (item.tax === LOWER_TYPE) {
+            iva += item.price * item.units * 4 / 100;
+        } else {
+            iva += 0;
+        }
+    }
+    return parseFloat(iva).toFixed(2)
+}
+
+var subTotal = (product) => {
+    let subTotalCarrito = 0;
+    for (var item of products) {
+        subTotalCarrito += item.price * item.units;
+    }
+    return parseFloat(subTotalCarrito).toFixed(2)
+}
+
+var totalC = () => {
+    var t = Number(subTotal()) + Number(totalIva());
+    return t.toFixed(2);
+}
+
+var handleCalcCarrito = () => {
+    event.preventDefault();
+
+    document.getElementById("subtotal").innerText = subTotal(product) + "€";
+    document.getElementById("totalIva").innerText = totalIva() + "€";
+    document.getElementById("totalCarrito").innerText = totalC() + "€";
+
+    console.log("event OK");
+    console.log(products)
+};
+
+
 var showProducts = productList => {
-    var container = document.getElementById("product-container");
-
-    for (var product of productList) {
-
-        // var ol = document.createElement("ol");
-        // description.setAttribute("class", "product-ol");
-
-        var description = document.createElement("ol");
-        description.setAttribute("class", "product-ol");
-        // document.getElementsByClassName("li").appendChild("ol");
-
-        description.innerHTML = "<li>" + product.description + " - " + product.price + " € " + " - " + product.tax + "% tax ";
-        container.appendChild(description);
-
-        description.appendChild(setQuantity(product));
-
+    for (product of products) {
+        getLista(product);
     }
 }
 
 showProducts(products);
 
-//2. Calcular factura y mostrar desglose final del precio
+// Eventos
 
-var calcular = () => {
-
-}
-document.getElementById("btn").addEventListener("click", calcular);
+document.getElementById("button-submit").addEventListener("click", handleCalcCarrito);
