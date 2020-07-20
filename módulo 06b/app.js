@@ -49,36 +49,20 @@ var getDecryption = () => {
 document.getElementById("encrypt").addEventListener("click", getEncryption);
 document.getElementById("decrypt").addEventListener("click", getDecryption);
 
-
-
 // EJERCICIO: GENERADOR ALEATORIO
-// Generar 10 números aleatorios entre el 1 y el 100.
-// Devolverá un array con dichos números. Ejemplo de output: [24, 83, 2, 94, 84, 38, 23, 69, 16, 89];
 
-// const randomPick = (n, min, max) => {
-//     var arr = [];
-//     range = max - min + 1;
-
-//     Random = Math.floor(Math.random() * range) + min;
-//     for (i = 0; i >= 9; i++) {
-//         random = Random[i];
-//     }
-//     return random[n];
-//     // Array = [n];
-//     // return Array[Math.floor(Math.random() * range) + min];
-// }
-
-// console.log(randomPick(10, 1, 100));
-
-var arr = [];
-for (var u = 0; u = 100; u++) {
-    for (var i = 0, l = 10; i < l; i++) {
-
+var randomPick = (n, min, max) => {
+    // generar array con rango y recorrerlo
+    var arr = new Array(max);
+    for (var i = min; i < max; i++) {
+        arr[i] = i + 1;
     }
-    arr.push(Math.round(Math.random() * l))
+    // darle ordenamiento al azar
+    arr.sort(() => Math.random() > 0.5 ? 1 : -1);
+    // dividirlo en n partes
+    var a = arr.slice(0, n);
+    console.log("Generador Aleatorio: " + a);
+    document.write("Generador Aleatorio: " + a);
 }
-console.log(arr);
 
-console.log(randomPick(10, 1, 100));
-// https://stackoverrun.com/es/q/1444877
-// https://jsfiddle.net/robert/tUW89/
+randomPick(10, 1, 100);
