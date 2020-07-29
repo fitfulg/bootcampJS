@@ -3,10 +3,10 @@ const ClientBusiness = require("./client-business");
 
 
 function printClientsAccounts() {
-    const clients = getClients();
+    const clients = DataBusiness.getClients();
     const ul = document.createElement("ul");
     for (let client of clients) {
-        const element = getClientElement(client);
+        const element = ClientBusiness.getClientElement(client);
         ul.appendChild(element);
     }
 

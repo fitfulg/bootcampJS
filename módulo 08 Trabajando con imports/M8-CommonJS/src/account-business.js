@@ -11,7 +11,7 @@ function getClientAccountsElement(accounts) {
 function getAccountElement(account) {
     const li = document.createElement("li");
 
-    li.style = getNodeStyle(account);
+    li.style = StyleBusiness.getNodeStyle(account);
 
     li.append("[Saldo: " + account.money + "] IBAN: " + account.iban);
     return li;

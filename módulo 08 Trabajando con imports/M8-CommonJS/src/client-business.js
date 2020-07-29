@@ -2,7 +2,7 @@ const DataBusiness = require("./data-business");
 const AccountBusiness = require("./account-business");
 
 function getClientElement(client) {
-    const allAccounts = getAccounts();
+    const allAccounts = DataBusiness.getAccounts();
     const clientAccounts = [];
     for (let account of allAccounts) {
         if (account.clientId === client.id) {
@@ -11,7 +11,7 @@ function getClientElement(client) {
     }
 
     const node = getClientNode(client);
-    const ul = getClientAccountsElement(clientAccounts);
+    const ul = AccountBusiness.getClientAccountsElement(clientAccounts);
 
     node.appendChild(ul);
 
