@@ -22,7 +22,17 @@
       "type": "2",
       "name": "Ahorro",
       "balance": 8500,
-      "lastTransaction": "2019-11-15T08:29:04"
+      "lastTransaction": "2019-11-15T08:29:04",
+      "alias": "Ahorro"
+    },
+    {
+      "iban": "JO87 HGSE 8840 8294 0300 4900 8051 11",
+      "name": "Nueva cuenta nomina2",
+      "type": "1",
+      "balance": 0,
+      "lastTransaction": "2020-08-26T19:20:28.765Z",
+      "id": "_NNkcLP",
+      "alias": "Nueva cuenta nomina2"
     }
   ],
   "movements": [
