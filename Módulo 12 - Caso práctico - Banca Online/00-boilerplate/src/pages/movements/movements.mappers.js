@@ -1,17 +1,25 @@
-export const mapMovementListFromApiToVM = (movementList, id) => {
-    return movementList.map(movement => mapMovementFromApiToVM(movement)).filter(mov => mov.accountId === id);
-}
+export const mapMovementsListFromApiToVm = (movementsList) => {
+    return movementsList.map((account) => mapMovementsFromApiToVm(account));
+};
 
-const mapMovementFromApiToVM = movementList => {
+const mapMovementsFromApiToVm = (movement) => {
     return {
-        id: movementList.id,
-        iban: movementList.iban,
-        alias: movementList.name,
-        description: movementList.description,
-        realTransaction: new Date(movementList.realTransaction).toLocaleDateString(),
-        transaction: new Date(movementList.transaction).toLocaleDateString(),
-        balance: `${movementList.balance} €`,
-        amount: `${movementList.amount} €`,
-        accountId: movementList.accountId
-    }
-}
+        transaction: new Date(movement.transaction).toLocaleDateString(),
+        realTransaction: new Date(movement.realTransaction).toLocaleDateString(),
+        description: movement.description,
+        amount: `${movement.amount} €`,
+        balance: `${movement.balance} €`,
+    };
+};
+
+export const mapUsersListFromApiToVm = (usersList) => {
+    return usersList.map((account) => mapUsersFromApiToVm(account));
+};
+
+const mapUsersFromApiToVm = (account) => {
+    return {
+        balance: `${account.balance} €`,
+        iban: account.iban,
+        alias: account.name,
+    };
+};

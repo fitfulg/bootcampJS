@@ -1,25 +1,30 @@
-import { getMovementsList } from './movements.api';
-import { getAccount } from '../account/account.api'
-import { addMovementRows } from './movements.helpers';
-import { mapMovementListFromApiToVM } from './movements.mappers'
+import { getmovementsList, getAccount } from './movements.api';
 import { history } from '../../core/router';
-import { onSetValues } from '../../common/helpers';
-import { mapAccountFromApiToVM } from '../account/account.mappers';
+import { mapMovementsListFromApiToVm, mapUsersListFromApiToVm } from './movements.mappers';
+import { addMovementRows } from './movements.helpers';
+import { onSetValues } from '../../common/helpers/element.helpers';
+
+let account = {
+    balance: '',
+    iban: '',
+    alias: '',
+};
 
 const params = history.getParams();
+const isEditMode = Boolean(params.id);
 
-
-
-getMovementsList().then(movementList => {
-    const viewModelMovementList = mapMovementListFromApiToVM(movementList, params.id);
-    const totalBalance = viewModelMovementList.reduce((acc, item) => acc + parseInt(item.balance), 0);
-
-
-    getAccount(params.id).then(apiAccount => {
-        const account = mapAccountFromApiToVM(apiAccount);
-        account.balance = totalBalance;
-
-        onSetValues(account);
+if (isEditMode) {
+    getmovementsList(params.id).then((apiMovement) => {
+        const movement = mapMovementsListFromApiToVm(apiMovement);
+        addMovementRows(movement);
     });
-    addMovementRows(viewModelMovementList);
-});
+    getAccount(params.id).then((response) => {
+        account = mapUsersListFromApiToVm(response);
+        onSetValues((([first]) => first)(account));
+    });
+} else {
+    getmovementsList().then((apiMovement) => {
+        const movement = mapMovementsListFromApiToVm(apiMovement);
+        addMovementRows(movement);
+    });
+}
