@@ -15,20 +15,22 @@ export const monthValidator = ({ value }) => {
     return {
         succeeded,
         message: succeeded ?
-            '' : 'Error en el mes',
+            '' :
+            'Error en el mes',
         type: '',
 
 
     }
 };
 export const yearValidator = ({ value }) => {
-        const succeeded = parseInt(value) >= 2020;
-        return {
-            succeeded,
-            message: succeeded ?
-                '' : 'Error en el año',
-            type: '',
+    const succeeded = parseInt(value) >= 2020;
+    return {
+        succeeded,
+        message: succeeded ?
+            '' :
+            'Error en el año',
+        type: '',
 
 
-        }
-    } //.
+    }
+}
