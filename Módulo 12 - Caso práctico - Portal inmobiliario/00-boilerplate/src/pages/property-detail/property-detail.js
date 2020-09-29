@@ -58,7 +58,6 @@ onUpdateField('message', (event) => {
 });
 
 onSubmitForm('contact-button', () => {
-
     formValidation.validateForm(formulario).then(result => {
         onSetFormErrors(result);
 
