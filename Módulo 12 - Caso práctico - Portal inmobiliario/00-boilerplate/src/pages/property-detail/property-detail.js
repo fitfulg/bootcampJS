@@ -7,9 +7,7 @@ import { formValidation } from './property-detail.validation';
 
 const params = history.getParams();
 
-
 getPropertiesList().then((propertiesList) => {
-
     const property = propertiesList[params.id - 1];
     property.rooms = `${property.rooms} habitaciones`;
     property.squareMeter = `${property.squareMeter} m2`;
@@ -29,10 +27,12 @@ getPropertiesList().then((propertiesList) => {
         setPropertyValues(property);
     });
 });
+
 let formulario = {
     email: '',
     message: ''
 };
+
 onUpdateField('email', (event) => {
     const value = event.target.value;
     formulario = {
@@ -44,6 +44,7 @@ onUpdateField('email', (event) => {
         onSetError('email', result);
     });
 });
+
 onUpdateField('message', (event) => {
     const value = event.target.value;
     formulario = {
@@ -55,6 +56,7 @@ onUpdateField('message', (event) => {
         onSetError('message', result);
     });
 });
+
 onSubmitForm('contact-button', () => {
 
     formValidation.validateForm(formulario).then(result => {

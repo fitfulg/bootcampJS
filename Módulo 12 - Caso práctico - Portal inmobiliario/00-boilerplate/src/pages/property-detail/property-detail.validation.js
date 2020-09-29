@@ -1,6 +1,6 @@
 import { Validators, createFormValidation } from '@lemoncode/fonk';
 
-const validationShema = {
+const validationComp = {
     field: {
         email: [Validators.email, Validators.required],
         message: [Validators.required]
@@ -8,4 +8,4 @@ const validationShema = {
     }
 };
 
-export const formValidation = createFormValidation(validationShema);
+export const formValidation = createFormValidation(validationComp);
