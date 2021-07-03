@@ -9,21 +9,21 @@ const object = {
 };
 
 const hasId = ({ id }) => id ? true : false;
-console.log(hasId(object));
+console.log(hasId(object)); //true
 
 // head
 // Implementa una función llamada head tal que, dado un array como entrada, devuelva el primer elemento.
 // TIP: No utilices el corchete ([]) para acceder a la posición 0.
 const headArr = ["a", "b", "c"];
 const head = ([zeroIndex]) => zeroIndex;
-console.log(head(headArr));
+console.log(head(headArr)); //a
 
 // tail
 // Implementa una función llamada tail tal que, dado un array como entrada, devuelva un nuevo array con todos los elementos menos el primero.
 // TIP: No se debe modificar el array de entrada. Piensa en destructuring y rest.
 const tailArr = ["excluded", 1, true, "last"];
 const tail = ([, ...rest]) => rest;
-console.log(tail(tailArr));
+console.log(tail(tailArr)); //[1, true, "last"]
 
 // swapFirstToLast
 // Implementa una función llamada swapFirstToLast tal que, 
@@ -31,7 +31,7 @@ console.log(tail(tailArr));
 // TIP: No se debe modificar el array de entrada. Piensa en destructuring y rest.
 const swapArr = [1, 2, 3];
 const swapFirstToLast = ([first, ...rest]) => [...rest, first];
-console.log(swapFirstToLast(swapArr));
+console.log(swapFirstToLast(swapArr)); //[2, 3, 1]
 
 // excludeId
 // Implementa una función llamada excludeId tal que, 
@@ -43,7 +43,7 @@ const object2 = {
     age: 35
 };
 const exclueId = ({ id, ...rest }) => rest;
-console.log(exclueId(object2));
+console.log(exclueId(object2)); //{name: "Eric", age: 35}
 
 // wordsStartingWithA
 // Implementa una función llamada wordsStartingWithA tal que,
@@ -53,13 +53,14 @@ const goddesses = ["Amaterasu", "Selene", "Atenea", "Tsukuyomi"];
 const wordsStartingWithA = (goddesses) =>
     goddesses.filter(([goddess]) => goddess.toLowerCase() == "a");
 
-console.log(wordsStartingWithA(goddesses));
+console.log(wordsStartingWithA(goddesses)); //["Amaterasu", "Atenea"]
 
 // concat
 // Implementa una función llamada concat tal que admita múltiples argumentos de tipo string y devuelva otro string con la concatenación de todos, separados por |.
 // TIP: No utilices bucles.
 const concat = (...items) => items.join(" | ");
 console.log(concat("Part 1", "Part 2", "Part 3", "Part 4"));
+//Part 1 | Part 2 | Part 3 | Part 4
 
 // multArray
 // Implementa una función llamada multArray 
@@ -67,7 +68,7 @@ console.log(concat("Part 1", "Part 2", "Part 3", "Part 4"));
 // TIP: No utilices bucles.
 const arr = [1, 2, 3, 4, 5, 6, 7];
 const multArray = (arr, x) => arr.map((item) => item * x);
-console.log(multArray(arr, 3));
+console.log(multArray(arr, 3)); //[3, 6, 9, 12, 15, 18, 21]
 
 // calcMult
 // Implementa una función llamada calcMult que admita múltiples números como argumento y devuelva como resultado el producto de todos ellos.
@@ -75,7 +76,7 @@ console.log(multArray(arr, 3));
 const calcMult = (...n) =>
     n.reduce((acc, n) => acc * n, 1);
 
-console.log(calcMult(1, 2, 3));
+console.log(calcMult(1, 2, 3)); //6
 
 // swapFirstSecond
 // Implementa una función swapFirstSecond tal que dado un array,
@@ -83,7 +84,7 @@ console.log(calcMult(1, 2, 3));
 // TIP: No modifiques el array de entrada original.
 const swapArr2 = [1, 2, 3];
 const swapFirstSecond = ([first, second, ...rest]) => [second, first, ...rest];
-console.log(swapFirstSecond(swapArr2));
+console.log(swapFirstSecond(swapArr2)); //[2, 1, 3]
 
 // firstEqual
 // Implementa una función firstEqual tal que 
@@ -94,6 +95,7 @@ const firstEqual = (char, ...strings) =>
     strings.every(([first]) => first.toLowerCase() === char);
 
 console.log(firstEqual("l", "Lemoncode", "Lorca", "libelula"));
+//true
 
 // longest
 // Implementa una función longest que admita múltiples arrays como entrada, y devuelva el array más largo.
@@ -104,7 +106,7 @@ const longest = (...arrays) =>
     .reduce((array) => array);
 
 console.log(longest(
-    [1, 2, 3], [1, 2], [1, 2, 3, 4]));
+    [1, 2, 3], [1, 2], [1, 2, 3, 4])); //[1, 2, 3, 4]
 
 // searchInStringV1
 // Implementa una función llamada searchInStringV1 tal que
@@ -117,6 +119,7 @@ const searchInStringV1 = (string, char) =>
         (letter === char ? acc + 1 : acc), 0);
 
 console.log(searchInStringV1("supercalifragilisticoespialidoso", "i"));
+//6
 
 // searchInStringV2
 // Implementa el mismo ejercicio de antes, llamando a la función searchInStringV2, 
@@ -130,6 +133,7 @@ const searchInStringV2 = (string, char) => {
     return acc;
 };
 console.log(searchInStringV2("supercalifragilisticoespialidoso", "i"));
+//6
 
 // sortCharacters
 // Implementa una función llamada sortCharacters tal que dado un string, lo devuelva con sus letras ordenadas alfabéticamente.
@@ -141,6 +145,7 @@ const sortCharacters = (string) =>
     .join("");
 
 console.log(sortCharacters("supercalifragilisticoespialidoso"));
+//aaaccdeefgiiiiiilllooopprrsssstu
 
 // shout
 // Implementa una función llamada shout tal que, 
@@ -150,6 +155,7 @@ const shout = (...strings) =>
     strings.reduce((acc, string) => `${acc} ${string.toUpperCase()}! `, "");
 
 console.log(shout("dorico", "jonico", "corintio"));
+//DORICO!  JONICO!  CORINTIO!
 
 // Lista de la compra
 // Dada la siguiente lista de la compra:
@@ -168,6 +174,13 @@ const iva = (tax, products) =>
     products.map((product) => ({...product, tax: product.price * 0.21 }));
 
 console.log(iva("tax", shoppingCart));
+// {category: "Frutas y Verduras", product: "Lechuga", price: 0.8, units: 1, tax: 0.168}
+// {category: "Carne y Pescado", product: "Pechuga pollo", price: 3.75, units: 2, tax: 0.7875}
+// {category: "Droguería", product: "Gel ducha", price: 1.15, units: 1, tax: 0.24149999999999996}
+// {category: "Droguería", product: "Papel cocina", price: 0.9, units: 3, tax: 0.189}
+// {category: "Frutas y Verduras", product: "Sandía", price: 4.65, units: 1, tax: 0.9765}
+// {category: "Frutas y Verduras", product: "Puerro", price: 4.65, units: 2, tax: 0.9765}
+// {category: "Carne y Pescado", product: "Secreto ibérico", price: 5.75, units: 2, tax: 1.2075}
 
 // B. Ordena la lista de más a menos unidades.
 const sortUnits = (products) =>
@@ -182,7 +195,7 @@ const getSubTotal = (products) =>
         return acc;
     }, 0);
 
-console.log(getSubTotal(shoppingCart));
+console.log(getSubTotal(shoppingCart)); //3.85
 
 // D. Obtén la lista por consola en formato "Producto -> Precio Total €" y ordenada por categoría.
 // TIP: No utilices bucles.
@@ -193,3 +206,12 @@ const productPrice = (products) =>
         console.log(`·${product.product}: ${product.price * product.units}€`)
     );
 productPrice(shoppingCart);
+/*
+·Secreto ibérico: 11.5€
+·Pechuga pollo: 7.5€
+·Gel ducha: 1.15€
+·Papel cocina: 2.7€
+·Sandía: 4.65€
+·Lechuga: 0.8€
+·Puerro: 9.3€
+*/
